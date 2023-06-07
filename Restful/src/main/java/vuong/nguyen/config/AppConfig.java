@@ -24,6 +24,8 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
+import vuong.nguyen.service.student.IStudentService;
+import vuong.nguyen.service.student.StudentServiceIMPL;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -117,5 +119,9 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     @Bean
     public ICustomerService customerService(){
         return new CustomerServiceIMPL();
+    }
+    @Bean
+    public IStudentService studentService(){
+        return new StudentServiceIMPL();
     }
 }
